@@ -2,7 +2,7 @@
 
 require_once('config/status_codes.php');
 
-$answer_code =htmlspecialchars($_POST['answer_code'],ENT_QUOTES);
+$answer_code = htmlspecialchars($_POST['answer_code'],ENT_QUOTES);
 $option = htmlspecialchars($_POST['option'],ENT_QUOTES);
 
 if (!$option){
@@ -11,12 +11,12 @@ if (!$option){
 
 foreach ($status_codes as $status_codes){
     if ($status_code['code'] === $answer_code){
-        $code = $status_code['description'];
+        $code = $status_code['code'];
         $description = $status_code['description'];
     }
 }
 
-$result = $option ===$code;
+$result = $option === $code;
 
 ?>
 
